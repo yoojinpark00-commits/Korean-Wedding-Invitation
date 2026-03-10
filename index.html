@@ -77,8 +77,9 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(
       180deg,
-      rgba(0,0,0,0.05) 0%,
-      rgba(0,0,0,0.15) 40%,
+      rgba(0,0,0,0.35) 0%,
+      rgba(0,0,0,0.05) 25%,
+      rgba(0,0,0,0.05) 40%,
       rgba(0,0,0,0.45) 100%
     );
   }
@@ -89,6 +90,8 @@
     background: rgba(255,255,255,0.5);
     opacity: 0;
     animation: lineGrow 1.2s ease-out 0.3s forwards;
+    position: relative;
+
   }
 
   @keyframes lineGrow {
@@ -105,6 +108,7 @@
     margin-top: 28px;
     opacity: 0;
     animation: fadeUp 1s ease-out 0.6s forwards;
+
   }
 
   .hero-names {
@@ -112,6 +116,7 @@
     margin: 40px 0;
     opacity: 0;
     animation: fadeUp 1s ease-out 0.9s forwards;
+
   }
 
   .hero-names .name-kr {
@@ -134,14 +139,51 @@
   }
 
   .hero-subtitle {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+    animation: subtitleReveal 1.8s ease-out 0.4s forwards;
+    padding: 0 24px;
+  }
+
+  .hero-subtitle .sub-top {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+  }
+
+  .hero-subtitle .sub-main {
+    display: block;
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-style: italic;
-    font-size: 20px;
-    letter-spacing: 4px;
-    color: rgba(255,255,255,0.7);
-    opacity: 0;
-    animation: fadeUp 1s ease-out 1.2s forwards;
+    font-size: 44px;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.25);
+  }
+
+  .hero-subtitle .sub-line {
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 14px auto 0;
+  }
+
+  @keyframes subtitleReveal {
+    0% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
   .scroll-indicator {
@@ -153,6 +195,7 @@
     gap: 8px;
     opacity: 0;
     animation: fadeUp 1s ease-out 1.8s forwards;
+
   }
 
   .scroll-indicator span {
@@ -917,7 +960,11 @@
       <span class="amp">&</span>
       <p class="name-kr">장영심</p>
     </div>
-    <p class="hero-subtitle">We are getting married</p>
+    <p class="hero-subtitle">
+      <span class="sub-top">we are</span>
+      <span class="sub-main">Getting Married</span>
+      <span class="sub-line"></span>
+    </p>
     <div class="scroll-indicator">
       <span>SCROLL</span>
       <div class="scroll-arrow"></div>
