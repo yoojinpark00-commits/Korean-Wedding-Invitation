@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>박유진 ♥ 장영심 결혼합니다</title>
+
+<!-- 카카오톡 / SNS 미리보기용 메타태그 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="박유진 ♥ 장영심 결혼합니다">
+<meta property="og:description" content="2026년 11월 1일 일요일 오전 11시 | 타이베이 메리어트 호텔">
+<meta property="og:image" content="https://www.yoojinandzoey.com/photo1.jpg">
+<meta property="og:url" content="https://www.yoojinandzoey.com">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="박유진 ♥ 장영심 결혼합니다">
+<meta name="twitter:description" content="2026년 11월 1일 일요일 오전 11시 | 타이베이 메리어트 호텔">
+<meta name="twitter:image" content="https://www.yoojinandzoey.com/photo1.jpg">
+
+<meta name="description" content="박유진 ♥ 장영심의 결혼식에 초대합니다. 2026년 11월 1일 일요일 오전 11시, 타이베이 메리어트 호텔">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400;500;600&family=Noto+Sans+KR:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF8F5;
+    --warm-beige: #F0EBE3;
+    --taupe: #C4B6A6;
+    --soft-gold: #BFA980;
+    --charcoal: #2C2C2C;
+    --text-main: #3A3A3A;
+    --text-light: #7A7A7A;
+    --text-subtle: #A8A8A8;
+    --accent: #9C8B75;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #E8E3DC;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .invitation-wrapper {
+    width: 100%;
+    max-width: 430px;
+    background: var(--ivory);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ─── HERO SECTION ─── */
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(180deg, #F5F1EC 0%, var(--ivory) 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(191,169,128,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(196,182,166,0.08) 0%, transparent 50%);
+  }
+
+  .hero-line {
+    width: 1px;
+    height: 60px;
+    background: var(--taupe);
+    opacity: 0;
+    animation: lineGrow 1.2s ease-out 0.3s forwards;
+  }
+
+  @keyframes lineGrow {
+    from { height: 0; opacity: 0; }
+    to { height: 60px; opacity: 0.5; }
+  }
+
+  .hero-date-top {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--text-light);
+    margin-top: 28px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.6s forwards;
+  }
+
+  .hero-names {
+    text-align: center;
+    margin: 40px 0;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.9s forwards;
+  }
+
+  .hero-names .name-kr {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 8px;
+    color: var(--charcoal);
+    line-height: 1;
+  }
+
+  .hero-names .amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--soft-gold);
+    margin: 16px 0;
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--text-subtle);
+    opacity: 0;
+    animation: fadeUp 1s ease-out 1.2s forwards;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 1.8s forwards;
+  }
+
+  .scroll-indicator span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-subtle);
+    font-weight: 300;
+  }
+
+  .scroll-arrow {
+    width: 1px;
+    height: 24px;
+    background: var(--taupe);
+    position: relative;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  .scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid var(--taupe);
+    border-bottom: 1px solid var(--taupe);
+    transform: rotate(45deg);
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  section {
+    padding: 72px 36px;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--soft-gold);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: var(--charcoal);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--taupe);
+    margin: 0 auto 40px;
+    opacity: 0.5;
+  }
+
+  /* ─── GREETING ─── */
+  .greeting {
+    background: var(--ivory);
+  }
+
+  .greeting-text {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 15px;
+    line-height: 2.2;
+    text-align: center;
+    color: var(--text-main);
+    word-break: keep-all;
+  }
+
+  .parents-info {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .parents-info .dot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: var(--taupe);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+
+  /* ─── GALLERY ─── */
+  .gallery {
+    background: var(--warm-beige);
+    padding: 72px 24px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    gap: 4px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-item.tall { aspect-ratio: 2/3; grid-row: span 2; }
+  .gallery-item.wide { aspect-ratio: 3/2; grid-column: span 2; }
+
+  .gallery-main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  /* ─── CALENDAR ─── */
+  .calendar-section {
+    background: var(--ivory);
+  }
+
+  .calendar {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .cal-month {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+    letter-spacing: 3px;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+  }
+
+  .cal-day-name {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-subtle);
+    padding: 8px 0;
+    font-weight: 400;
+  }
+
+  .cal-day-name:first-child { color: #C4736E; }
+
+  .cal-day {
+    font-size: 13px;
+    padding: 8px 0;
+    color: var(--text-light);
+    font-weight: 300;
+    position: relative;
+  }
+
+  .cal-day:nth-child(7n+1) { color: #C4736E; }
+
+  .cal-day.highlight {
+    color: white;
+    font-weight: 500;
+  }
+
+  .cal-day.highlight::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .cal-day.highlight span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cal-day.empty { visibility: hidden; }
+
+  .wedding-time {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 2;
+  }
+
+  .wedding-time strong {
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  /* ─── LOCATION ─── */
+  .location {
+    background: var(--warm-beige);
+  }
+
+  .map-container {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .map-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .map-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border: 1px solid var(--taupe);
+    border-radius: 2px;
+    font-size: 12px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+
+  .map-btn:active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  .map-btn-logo {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .location-info {
+    text-align: center;
+  }
+
+  .location-name {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .location-hall {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .location-address {
+    font-size: 12px;
+    color: var(--text-subtle);
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+
+  .transport-info {
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(196,182,166,0.3);
+  }
+
+  .transport-item {
+    margin-bottom: 20px;
+  }
+
+  .transport-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--soft-gold);
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .transport-detail {
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ─── ACCOUNT ─── */
+  .account-section {
+    background: var(--ivory);
+  }
+
+  .account-toggle-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .account-toggle {
+    padding: 10px 28px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: 1px solid var(--taupe);
+    background: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .account-toggle.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .account-box {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    background: var(--warm-beige);
+    border-radius: 2px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .account-box.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .account-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(196,182,166,0.2);
+  }
+
+  .account-row:last-child { border-bottom: none; }
+
+  .account-who {
+    font-size: 12px;
+    color: var(--text-subtle);
+    font-weight: 300;
+    min-width: 50px;
+    text-align: left;
+  }
+
+  .account-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--text-main);
+    letter-spacing: 1px;
+  }
+
+  .copy-btn {
+    padding: 5px 14px;
+    font-size: 11px;
+    border: 1px solid var(--taupe);
+    background: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .copy-btn:active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  /* ─── RSVP / CLOSING ─── */
+  .closing {
+    background: linear-gradient(180deg, var(--ivory) 0%, #F5F1EC 100%);
+    text-align: center;
+    padding-bottom: 100px;
+  }
+
+  .closing-text {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 2;
+    color: var(--charcoal);
+    margin-bottom: 48px;
+  }
+
+  .closing-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: var(--text-subtle);
+    margin-bottom: 48px;
+  }
+
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 36px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+
+  .share-btn:active {
+    transform: scale(0.97);
+    background: #8A7A65;
+  }
+
+  .share-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .website-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 300;
+  }
+
+  /* ─── RSVP ─── */
+  .rsvp-section {
+    background: var(--warm-beige);
+    text-align: center;
+  }
+
+  .rsvp-text {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    line-height: 2;
+  }
+
+  .rsvp-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .rsvp-btn:active {
+    transform: scale(0.97);
+    background: #8A7A65;
+  }
+
+  .rsvp-deadline {
+    font-size: 11px;
+    color: var(--text-subtle);
+    margin-top: 16px;
+    letter-spacing: 1px;
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── FLOATING PETALS ─── */
+  .petal {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--taupe);
+    opacity: 0;
+    border-radius: 50% 0 50% 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="invitation-wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-line"></div>
+    <p class="hero-date-top">2026 . 11 . 01</p>
+    <div class="hero-names">
+      <p class="name-kr">박유진</p>
+      <span class="amp">&</span>
+      <p class="name-kr">장영심</p>
+    </div>
+    <p class="hero-subtitle">저희 결혼합니다</p>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- GREETING -->
+  <section class="greeting">
+    <div class="reveal">
+      <div class="parents-info">
+        <p>박성삼 <span class="dot"></span> 이윤미 <span style="margin-left:4px;color:var(--text-subtle);font-size:11px">의 아들</span> 박유진</p>
+        <p>장지유(張志儒) <span class="dot"></span> 황행차(黃幸釵) <span style="margin-left:4px;color:var(--text-subtle);font-size:11px">의 딸</span> 장영심</p>
+      </div>
+      <div class="divider" style="margin-top:40px"></div>
+      <p class="section-label">Invitation</p>
+      <h2 class="section-title">소중한 분들을 초대합니다</h2>
+      <p class="greeting-text">
+        서로 다른 길을 걸어온 두 사람이<br>
+        이제 같은 길을 걸어가려 합니다.<br><br>
+        저희의 새로운 시작을<br>
+        함께 축복해 주시면 감사하겠습니다.<br><br>
+        귀한 걸음 하시어<br>
+        따뜻한 마음으로 함께해 주세요.
+      </p>
+    </div>
+  </section>
+
+  <!-- 참석의사 -->
+  <section class="rsvp-section">
+    <div class="reveal">
+      <p class="section-label">RSVP</p>
+      <h2 class="section-title">참석의사 전달</h2>
+      <div class="divider"></div>
+      <p class="rsvp-text">
+        참석 가능 여부를<br>
+        아래 버튼을 통해 알려주세요.
+      </p>
+      <a href="https://www.yoojinandzoey.com/#rsvp" class="rsvp-btn" target="_blank">참석 의사 전달</a>
+      <p class="rsvp-deadline">2026년 9월 15일까지 응답 부탁드립니다</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="reveal">
+      <p class="section-label">Gallery</p>
+      <h2 class="section-title">우리의 순간</h2>
+      <div class="divider"></div>
+      <div class="gallery-grid gallery-main">
+        <div class="gallery-item tall">
+          <img src="https://www.yoojinandzoey.com/photo1.jpg" alt="박유진 & 장영심">
+        </div>
+        <div class="gallery-item">
+          <img src="https://www.yoojinandzoey.com/photo2.jpg" alt="박유진 & 장영심">
+        </div>
+        <div class="gallery-item">
+          <img src="https://www.yoojinandzoey.com/photo3.jpg" alt="박유진 & 장영심">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="calendar-section">
+    <div class="reveal">
+      <p class="section-label">When</p>
+      <h2 class="section-title">예식 일시</h2>
+      <div class="divider"></div>
+      <div class="calendar">
+        <p class="cal-month">NOVEMBER 2026</p>
+        <div class="cal-grid">
+          <span class="cal-day-name">일</span>
+          <span class="cal-day-name">월</span>
+          <span class="cal-day-name">화</span>
+          <span class="cal-day-name">수</span>
+          <span class="cal-day-name">목</span>
+          <span class="cal-day-name">금</span>
+          <span class="cal-day-name">토</span>
+
+          <span class="cal-day highlight"><span>1</span></span>
+          <span class="cal-day">2</span>
+          <span class="cal-day">3</span>
+          <span class="cal-day">4</span>
+          <span class="cal-day">5</span>
+          <span class="cal-day">6</span>
+          <span class="cal-day">7</span>
+
+          <span class="cal-day">8</span>
+          <span class="cal-day">9</span>
+          <span class="cal-day">10</span>
+          <span class="cal-day">11</span>
+          <span class="cal-day">12</span>
+          <span class="cal-day">13</span>
+          <span class="cal-day">14</span>
+
+          <span class="cal-day">15</span>
+          <span class="cal-day">16</span>
+          <span class="cal-day">17</span>
+          <span class="cal-day">18</span>
+          <span class="cal-day">19</span>
+          <span class="cal-day">20</span>
+          <span class="cal-day">21</span>
+
+          <span class="cal-day">22</span>
+          <span class="cal-day">23</span>
+          <span class="cal-day">24</span>
+          <span class="cal-day">25</span>
+          <span class="cal-day">26</span>
+          <span class="cal-day">27</span>
+          <span class="cal-day">28</span>
+
+          <span class="cal-day">29</span>
+          <span class="cal-day">30</span>
+          <span class="cal-day empty">·</span>
+          <span class="cal-day empty">·</span>
+          <span class="cal-day empty">·</span>
+          <span class="cal-day empty">·</span>
+          <span class="cal-day empty">·</span>
+        </div>
+        <div class="wedding-time">
+          <strong>2026년 11월 1일 일요일</strong><br>
+          오전 11시 예식 · 낮 12시 피로연
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location">
+    <div class="reveal">
+      <p class="section-label">Where</p>
+      <h2 class="section-title">오시는 길</h2>
+      <div class="divider"></div>
+
+      <a href="https://m.map.naver.com/map.naver?lat=25.0836&lng=121.5565&dlevel=12&pinTitle=%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4%20%EB%A9%94%EB%A6%AC%EC%96%B4%ED%8A%B8%20%ED%98%B8%ED%85%94" target="_blank" class="map-container" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;background:linear-gradient(135deg,#D4CBC0,#C9BFB3);position:relative;">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 20px,rgba(255,255,255,0.08) 20px,rgba(255,255,255,0.08) 21px),repeating-linear-gradient(90deg,transparent,transparent 20px,rgba(255,255,255,0.08) 20px,rgba(255,255,255,0.08) 21px);"></div>
+        <svg style="width:36px;height:36px;stroke:rgba(255,255,255,0.5);position:relative;margin-bottom:8px" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span style="position:relative;font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:2px">네이버 지도 보기</span>
+      </a>
+
+      <div class="map-buttons">
+        <a href="https://m.map.naver.com/map.naver?lat=25.0836&lng=121.5565&dlevel=12&pinTitle=%ED%83%80%EC%9D%B4%EB%B2%A0%EC%9D%B4%20%EB%A9%94%EB%A6%AC%EC%96%B4%ED%8A%B8%20%ED%98%B8%ED%85%94" target="_blank" class="map-btn">
+          <svg class="map-btn-logo" viewBox="0 0 20 20"><rect width="20" height="20" rx="4" fill="#03C75A"/><path d="M11.3 10.3L8.5 6.2H6.7v7.6h2.1v-4.1l2.8 4.1h1.8V6.2h-2.1v4.1z" fill="white"/></svg>
+          네이버 지도
+        </a>
+        <a href="https://map.kakao.com/?q=Taipei+Marriott+Hotel" target="_blank" class="map-btn">
+          <svg class="map-btn-logo" viewBox="0 0 20 20"><rect width="20" height="20" rx="4" fill="#FEE500"/><path d="M10 4.5C6.69 4.5 4 6.58 4 9.15c0 1.66 1.1 3.12 2.77 3.95l-.7 2.6c-.06.21.18.38.37.26l3.1-2.04c.15.01.3.02.46.02 3.31 0 6-2.08 6-4.64S13.31 4.5 10 4.5z" fill="#3C1E1E"/></svg>
+          카카오맵
+        </a>
+      </div>
+
+      <div class="location-info">
+        <p class="location-name">타이베이 메리어트 호텔</p>
+        <p class="location-hall">8층 연회장</p>
+        <p class="location-address">
+          대만 타이베이시 중산구 러취안 2로 199호<br>
+          Taipei City, Taiwan 10462
+        </p>
+      </div>
+
+      <div class="transport-info">
+        <div class="transport-item">
+          <p class="transport-label">항공편</p>
+          <p class="transport-detail">타오위안 국제공항(TPE) · 인천에서 직항 약 2시간 30분</p>
+        </div>
+        <div class="transport-item">
+          <p class="transport-label">공항에서 호텔</p>
+          <p class="transport-detail">공항철도 → 타이베이역 → 지하철 레드라인<br>지엔난루역 하차 후 도보 (약 40분)</p>
+        </div>
+        <div class="transport-item">
+          <p class="transport-label">택시</p>
+          <p class="transport-detail">공항에서 약 1,200~1,500 대만달러 (한화 약 5~6만원)</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOUNT -->
+  <section class="account-section">
+    <div class="reveal">
+      <p class="section-label">Gift</p>
+      <h2 class="section-title">마음 전하실 곳</h2>
+      <div class="divider"></div>
+
+      <div class="account-box active" style="display:block">
+        <div class="account-row">
+          <span class="account-who">신랑 아버지</span>
+          <span class="account-num">신한 338-04-507599</span>
+          <button class="copy-btn" onclick="copyText('338-04-507599')">복사</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="reveal">
+      <p class="closing-text">
+        박유진 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--soft-gold);margin:0 4px">&</span> 장영심
+      </p>
+      <p class="closing-date">2026 . 11 . 01 . SUN . AM 11:00</p>
+      <button class="share-btn" onclick="shareKakao()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        카카오톡 공유
+      </button>
+      <a href="https://www.yoojinandzoey.com" class="website-link" target="_blank">웨딩 사이트 바로가기 →</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Account toggle
+  function showAccount(type) {
+    document.querySelectorAll('.account-toggle').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.account-box').forEach(box => box.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById(type + '-account').classList.add('active');
+  }
+
+  // Copy account number
+  function copyText(text) {
+    navigator.clipboard.writeText(text.replace(/[^0-9-]/g, '')).then(() => {
+      const btn = event.target;
+      btn.textContent = '완료';
+      btn.style.background = 'var(--accent)';
+      btn.style.color = 'white';
+      btn.style.borderColor = 'var(--accent)';
+      setTimeout(() => {
+        btn.textContent = '복사';
+        btn.style.background = 'transparent';
+        btn.style.color = 'var(--text-light)';
+        btn.style.borderColor = 'var(--taupe)';
+      }, 1500);
+    });
+  }
+
+  // Share via KakaoTalk
+  function shareKakao() {
+    if (navigator.share) {
+      navigator.share({
+        title: '박유진 ♥ 장영심 결혼합니다',
+        text: '2026년 11월 1일 일요일 오전 11시\n타이베이 메리어트 호텔',
+        url: 'https://www.yoojinandzoey.com'
+      });
+    } else {
+      alert('모바일에서 카카오톡 공유가 가능합니다.');
+    }
+  }
+
+  // Floating petals (subtle)
+  function createPetal() {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.top = '-10px';
+    petal.style.transform = `rotate(${Math.random() * 360}deg) scale(${0.5 + Math.random()})`;
+    document.body.appendChild(petal);
+
+    const duration = 6000 + Math.random() * 4000;
+    const drift = (Math.random() - 0.5) * 100;
+
+    petal.animate([
+      { top: '-10px', left: petal.style.left, opacity: 0 },
+      { opacity: 0.25, offset: 0.1 },
+      { opacity: 0.2, offset: 0.8 },
+      { top: '105vh', left: `calc(${petal.style.left} + ${drift}px)`, opacity: 0 }
+    ], { duration, easing: 'linear' });
+
+    setTimeout(() => petal.remove(), duration);
+  }
+
+  setInterval(createPetal, 2500);
+  setTimeout(createPetal, 500);
+  setTimeout(createPetal, 1200);
+</script>
+
+</body>
+</html>
