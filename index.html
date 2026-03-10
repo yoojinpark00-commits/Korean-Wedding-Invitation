@@ -65,24 +65,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-bottom: 80px;
     position: relative;
-    background: linear-gradient(180deg, #F5F1EC 0%, var(--ivory) 100%);
+    background: url('hero-bg.jpg') center center / cover no-repeat;
   }
 
   .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background:
-      radial-gradient(ellipse at 20% 20%, rgba(191,169,128,0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, rgba(196,182,166,0.08) 0%, transparent 50%);
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.05) 0%,
+      rgba(0,0,0,0.15) 40%,
+      rgba(0,0,0,0.45) 100%
+    );
   }
 
   .hero-line {
     width: 1px;
     height: 60px;
-    background: var(--taupe);
+    background: rgba(255,255,255,0.5);
     opacity: 0;
     animation: lineGrow 1.2s ease-out 0.3s forwards;
   }
@@ -97,7 +101,7 @@
     font-weight: 300;
     font-size: 13px;
     letter-spacing: 6px;
-    color: var(--text-light);
+    color: rgba(255,255,255,0.8);
     margin-top: 28px;
     opacity: 0;
     animation: fadeUp 1s ease-out 0.6s forwards;
@@ -115,7 +119,7 @@
     font-weight: 300;
     font-size: 28px;
     letter-spacing: 8px;
-    color: var(--charcoal);
+    color: rgba(255,255,255,0.95);
     line-height: 1;
   }
 
@@ -124,7 +128,7 @@
     font-weight: 300;
     font-style: italic;
     font-size: 22px;
-    color: var(--soft-gold);
+    color: rgba(255,255,255,0.6);
     margin: 16px 0;
     display: block;
   }
@@ -133,9 +137,9 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-style: italic;
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: var(--text-subtle);
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.7);
     opacity: 0;
     animation: fadeUp 1s ease-out 1.2s forwards;
   }
@@ -154,14 +158,14 @@
   .scroll-indicator span {
     font-size: 10px;
     letter-spacing: 3px;
-    color: var(--text-subtle);
+    color: rgba(255,255,255,0.5);
     font-weight: 300;
   }
 
   .scroll-arrow {
     width: 1px;
     height: 24px;
-    background: var(--taupe);
+    background: rgba(255,255,255,0.4);
     position: relative;
     animation: scrollBounce 2s ease-in-out infinite;
   }
@@ -173,8 +177,8 @@
     left: -3px;
     width: 7px;
     height: 7px;
-    border-right: 1px solid var(--taupe);
-    border-bottom: 1px solid var(--taupe);
+    border-right: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
     transform: rotate(45deg);
   }
 
@@ -240,21 +244,74 @@
 
   .parents-info {
     margin-bottom: 0;
-    text-align: center;
-    font-size: 13px;
-    line-height: 2;
-    color: var(--text-light);
-    font-weight: 300;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
   }
 
-  .parents-info .dot {
+  .parent-card {
+    flex: 1;
+    max-width: 170px;
+    text-align: center;
+    padding: 28px 16px;
+    background: linear-gradient(180deg, rgba(240,235,227,0.5) 0%, rgba(250,248,245,0.5) 100%);
+    border: 1px solid rgba(196,182,166,0.25);
+    position: relative;
+  }
+
+  .parent-card-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--soft-gold);
+    margin-bottom: 16px;
+  }
+
+  .parent-card-parents {
+    font-size: 12px;
+    color: var(--text-subtle);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .parent-card-parents .parent-name {
+    color: var(--text-light);
+  }
+
+  .parent-card-dot {
     display: inline-block;
-    width: 3px;
-    height: 3px;
+    width: 2px;
+    height: 2px;
     background: var(--taupe);
     border-radius: 50%;
     vertical-align: middle;
-    margin: 0 10px;
+    margin: 0 6px;
+  }
+
+  .parent-card-line {
+    width: 20px;
+    height: 1px;
+    background: var(--taupe);
+    margin: 0 auto 14px;
+    opacity: 0.4;
+  }
+
+  .parent-card-child {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--charcoal);
+    letter-spacing: 3px;
+  }
+
+  .parent-card-role {
+    font-size: 10px;
+    color: var(--text-subtle);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    font-weight: 300;
   }
 
   /* ─── GALLERY ─── */
@@ -265,13 +322,15 @@
 
   .gallery-grid {
     display: grid;
-    gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
   }
 
   .gallery-item {
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .gallery-item img {
@@ -279,14 +338,92 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
   }
 
-  .gallery-item.tall { aspect-ratio: 2/3; grid-row: span 2; }
-  .gallery-item.wide { aspect-ratio: 3/2; grid-column: span 2; }
+  .gallery-item:active img {
+    transform: scale(1.05);
+  }
 
-  .gallery-main {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+  /* ─── LIGHTBOX ─── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 2px;
+    animation: lbFadeIn 0.3s ease;
+  }
+
+  @keyframes lbFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-close svg {
+    width: 24px;
+    height: 24px;
+    stroke: rgba(255,255,255,0.7);
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-nav svg {
+    width: 28px;
+    height: 28px;
+    stroke: rgba(255,255,255,0.6);
+  }
+
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+
+  .lightbox-counter {
+    margin-top: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 3px;
   }
 
   /* ─── CALENDAR ─── */
@@ -641,9 +778,56 @@
     line-height: 2;
   }
 
-  .rsvp-btn {
-    display: inline-block;
-    padding: 14px 40px;
+  .rsvp-form {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .rsvp-field {
+    margin-bottom: 20px;
+  }
+
+  .rsvp-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--soft-gold);
+    font-weight: 400;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .rsvp-label .required {
+    color: #C4736E;
+    margin-left: 2px;
+  }
+
+  .rsvp-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--taupe);
+    background: var(--ivory);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.2s;
+    letter-spacing: 0.5px;
+  }
+
+  .rsvp-input::placeholder {
+    color: var(--text-subtle);
+    font-weight: 300;
+  }
+
+  .rsvp-input:focus {
+    border-color: var(--accent);
+  }
+
+  .rsvp-submit {
+    display: block;
+    width: 100%;
+    padding: 14px;
     background: var(--accent);
     color: white;
     border: none;
@@ -653,19 +837,46 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
     transition: all 0.3s ease;
-    text-decoration: none;
+    margin-top: 8px;
   }
 
-  .rsvp-btn:active {
+  .rsvp-submit:active {
     transform: scale(0.97);
     background: #8A7A65;
+  }
+
+  .rsvp-submit:disabled {
+    background: var(--taupe);
+    cursor: not-allowed;
+  }
+
+  .rsvp-success {
+    display: none;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .rsvp-success .check {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+    color: var(--accent);
+  }
+
+  .rsvp-success p {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 200;
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 2;
   }
 
   .rsvp-deadline {
     font-size: 11px;
     color: var(--text-subtle);
-    margin-top: 16px;
+    margin-top: 20px;
     letter-spacing: 1px;
+    text-align: center;
   }
 
   /* ─── SCROLL ANIMATIONS ─── */
@@ -706,7 +917,7 @@
       <span class="amp">&</span>
       <p class="name-kr">장영심</p>
     </div>
-    <p class="hero-subtitle">저희 결혼합니다</p>
+    <p class="hero-subtitle">We are getting married</p>
     <div class="scroll-indicator">
       <span>SCROLL</span>
       <div class="scroll-arrow"></div>
@@ -717,8 +928,28 @@
   <section class="greeting">
     <div class="reveal">
       <div class="parents-info">
-        <p>박성삼 <span class="dot"></span> 이윤미 <span style="margin-left:4px;color:var(--text-subtle);font-size:11px">의 아들</span> 박유진</p>
-        <p>장지유(張志儒) <span class="dot"></span> 황행차(黃幸釵) <span style="margin-left:4px;color:var(--text-subtle);font-size:11px">의 딸</span> 장영심</p>
+        <div class="parent-card">
+          <p class="parent-card-label">Groom</p>
+          <p class="parent-card-parents">
+            <span style="font-size:10px;color:var(--text-subtle);letter-spacing:1px">부</span> <span class="parent-name">박성삼</span>
+            <br>
+            <span style="font-size:10px;color:var(--text-subtle);letter-spacing:1px">모</span> <span class="parent-name">이윤미</span>
+          </p>
+          <div class="parent-card-line"></div>
+          <p class="parent-card-role">아들</p>
+          <p class="parent-card-child">박유진</p>
+        </div>
+        <div class="parent-card">
+          <p class="parent-card-label">Bride</p>
+          <p class="parent-card-parents">
+            <span style="font-size:10px;color:var(--text-subtle);letter-spacing:1px">부</span> <span class="parent-name">장지유</span> <span style="font-size:10px;color:var(--text-subtle)">(張志儒)</span>
+            <br>
+            <span style="font-size:10px;color:var(--text-subtle);letter-spacing:1px">모</span> <span class="parent-name">황행차</span> <span style="font-size:10px;color:var(--text-subtle)">(黃幸釵)</span>
+          </p>
+          <div class="parent-card-line"></div>
+          <p class="parent-card-role">딸</p>
+          <p class="parent-card-child">장영심</p>
+        </div>
       </div>
       <div class="divider" style="margin-top:40px"></div>
       <p class="section-label">Invitation</p>
@@ -741,11 +972,29 @@
       <h2 class="section-title">참석의사 전달</h2>
       <div class="divider"></div>
       <p class="rsvp-text">
-        참석 가능 여부를<br>
-        아래 버튼을 통해 알려주세요.
+        참석 여부를 알려주시면<br>
+        감사하겠습니다.
       </p>
-      <a href="https://www.yoojinandzoey.com/#rsvp" class="rsvp-btn" target="_blank">참석 의사 전달</a>
-      <p class="rsvp-deadline">2026년 9월 15일까지 응답 부탁드립니다</p>
+
+      <div class="rsvp-form" id="rsvp-form">
+        <div class="rsvp-field">
+          <label class="rsvp-label">성함 <span class="required">*</span></label>
+          <input type="text" class="rsvp-input" id="rsvp-name" placeholder="이름을 입력해 주세요" required>
+        </div>
+        <div class="rsvp-field">
+          <label class="rsvp-label">동행자</label>
+          <input type="text" class="rsvp-input" id="rsvp-guest" placeholder="예: 김지수, 김민아">
+        </div>
+        <button type="button" class="rsvp-submit" id="rsvp-submit" onclick="submitRSVP()">참석 의사 전달</button>
+        <p class="rsvp-deadline">2026년 9월 15일까지 응답 부탁드립니다</p>
+      </div>
+
+      <div class="rsvp-success" id="rsvp-success">
+        <span class="check">✓</span>
+        <p>감사합니다!<br>참석의사가 전달되었습니다.</p>
+      </div>
+
+      <iframe name="rsvp-iframe" id="rsvp-iframe" style="display:none"></iframe>
     </div>
   </section>
 
@@ -755,19 +1004,41 @@
       <p class="section-label">Gallery</p>
       <h2 class="section-title">우리의 순간</h2>
       <div class="divider"></div>
-      <div class="gallery-grid gallery-main">
-        <div class="gallery-item tall">
-          <img src="https://www.yoojinandzoey.com/photo1.jpg" alt="박유진 & 장영심">
-        </div>
-        <div class="gallery-item">
-          <img src="https://www.yoojinandzoey.com/photo2.jpg" alt="박유진 & 장영심">
-        </div>
-        <div class="gallery-item">
-          <img src="https://www.yoojinandzoey.com/photo3.jpg" alt="박유진 & 장영심">
-        </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox(0)"><img src="https://www.yoojinandzoey.com/photo1.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(1)"><img src="https://www.yoojinandzoey.com/photo2.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(2)"><img src="https://www.yoojinandzoey.com/photo3.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(3)"><img src="https://www.yoojinandzoey.com/photo4.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(4)"><img src="https://www.yoojinandzoey.com/photo5.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(5)"><img src="https://www.yoojinandzoey.com/photo6.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(6)"><img src="https://www.yoojinandzoey.com/photo7.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(7)"><img src="https://www.yoojinandzoey.com/photo8.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(8)"><img src="https://www.yoojinandzoey.com/photo9.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(9)"><img src="https://www.yoojinandzoey.com/photo10.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(10)"><img src="https://www.yoojinandzoey.com/photo11.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(11)"><img src="https://www.yoojinandzoey.com/photo12.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(12)"><img src="https://www.yoojinandzoey.com/photo1.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(13)"><img src="https://www.yoojinandzoey.com/photo2.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(14)"><img src="https://www.yoojinandzoey.com/photo3.jpg" alt=""></div>
+        <div class="gallery-item" onclick="openLightbox(15)"><img src="https://www.yoojinandzoey.com/photo4.jpg" alt=""></div>
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(event, -1)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="15,18 9,12 15,6"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="">
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(event, 1)">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="9,6 15,12 9,18"/></svg>
+    </button>
+    <span class="lightbox-counter" id="lightbox-counter"></span>
+  </div>
 
   <!-- CALENDAR -->
   <section class="calendar-section">
@@ -920,6 +1191,97 @@
 </div>
 
 <script>
+  // Lightbox
+  const photos = [
+    'https://www.yoojinandzoey.com/photo1.jpg',
+    'https://www.yoojinandzoey.com/photo2.jpg',
+    'https://www.yoojinandzoey.com/photo3.jpg',
+    'https://www.yoojinandzoey.com/photo4.jpg',
+    'https://www.yoojinandzoey.com/photo5.jpg',
+    'https://www.yoojinandzoey.com/photo6.jpg',
+    'https://www.yoojinandzoey.com/photo7.jpg',
+    'https://www.yoojinandzoey.com/photo8.jpg',
+    'https://www.yoojinandzoey.com/photo9.jpg',
+    'https://www.yoojinandzoey.com/photo10.jpg',
+    'https://www.yoojinandzoey.com/photo11.jpg',
+    'https://www.yoojinandzoey.com/photo12.jpg',
+    'https://www.yoojinandzoey.com/photo1.jpg',
+    'https://www.yoojinandzoey.com/photo2.jpg',
+    'https://www.yoojinandzoey.com/photo3.jpg',
+    'https://www.yoojinandzoey.com/photo4.jpg'
+  ];
+  let currentPhoto = 0;
+
+  function openLightbox(index) {
+    currentPhoto = index;
+    const lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = photos[index];
+    document.getElementById('lightbox-counter').textContent = (index + 1) + ' / ' + photos.length;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.closest('.lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function navLightbox(e, dir) {
+    e.stopPropagation();
+    currentPhoto = (currentPhoto + dir + photos.length) % photos.length;
+    document.getElementById('lightbox-img').src = photos[currentPhoto];
+    document.getElementById('lightbox-counter').textContent = (currentPhoto + 1) + ' / ' + photos.length;
+  }
+
+  // Touch swipe for lightbox
+  let touchStartX = 0;
+  document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  document.getElementById('lightbox').addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) {
+      navLightbox(e, diff > 0 ? 1 : -1);
+    }
+  });
+
+  // RSVP - submit to Google Forms via hidden iframe
+  function submitRSVP() {
+    const name = document.getElementById('rsvp-name').value.trim();
+    const guest = document.getElementById('rsvp-guest').value.trim();
+
+    if (!name) {
+      document.getElementById('rsvp-name').style.borderColor = '#C4736E';
+      document.getElementById('rsvp-name').setAttribute('placeholder', '성함을 입력해 주세요');
+      return;
+    }
+
+    const btn = document.getElementById('rsvp-submit');
+    btn.disabled = true;
+    btn.textContent = '전송 중...';
+
+    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSf1YwrqAdDO9eQ6IO6TzPInN2JHx2FAD52rym3qEOWt0mDKDg/formResponse';
+
+    const formData = new URLSearchParams();
+    formData.append('entry.594575884', name);
+    formData.append('entry.1742471024', guest);
+
+    fetch(formUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formData.toString()
+    }).then(() => {
+      document.getElementById('rsvp-form').style.display = 'none';
+      document.getElementById('rsvp-success').style.display = 'block';
+    }).catch(() => {
+      document.getElementById('rsvp-form').style.display = 'none';
+      document.getElementById('rsvp-success').style.display = 'block';
+    });
+  }
+
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
