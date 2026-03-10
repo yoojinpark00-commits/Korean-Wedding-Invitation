@@ -923,6 +923,25 @@
   }
 
   /* ─── BOTTOM BAR ─── */
+  .bottom-website-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    background: var(--accent);
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .bottom-website-link:active {
+    background: #8A7A65;
+  }
+
   .bottom-bar {
     width: 100%;
     display: flex;
@@ -1278,15 +1297,11 @@
         박유진 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--soft-gold);margin:0 4px">&</span> 장영심
       </p>
       <p class="closing-date">2026 . 11 . 01 . SUN . AM 11:00</p>
-      <button class="share-btn" onclick="shareKakao()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-        카카오톡 공유
-      </button>
-      <a href="https://www.yoojinandzoey.com" class="website-link" target="_blank">웨딩 사이트 바로가기 →</a>
     </div>
   </section>
 
   <!-- BOTTOM BAR -->
+  <a href="https://www.yoojinandzoey.com" class="bottom-website-link" target="_blank">웨딩 사이트 바로가기 →</a>
   <div class="bottom-bar">
     <button class="bottom-btn" onclick="addToCalendar()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
