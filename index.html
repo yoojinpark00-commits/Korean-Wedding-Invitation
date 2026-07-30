@@ -1559,15 +1559,20 @@
     window.open(url, '_blank');
   }
 
+  // Canonical URL used for sharing — must stay a single fixed string so
+  // messaging apps cache one preview entry regardless of www/slash/query
+  // variants in the visitor's address bar
+  const SHARE_URL = 'https://zoeyandyoojin.com';
+
   // Copy link
   function copyLink() {
-    const url = window.location.href;
+    const url = SHARE_URL;
     navigator.clipboard.writeText(url).then(() => {
       showToast('링크가 복사되었습니다');
     }).catch(() => {
       // Fallback for older browsers
       const input = document.createElement('input');
-      input.value = url;
+      input.value = SHARE_URL;
       document.body.appendChild(input);
       input.select();
       document.execCommand('copy');
@@ -1582,7 +1587,7 @@
       navigator.share({
         title: 'Yoojin ♥ Zoey | 11 . 01 . 2026',
         text: 'Sunday, November 1, 2026, 11 AM\nTaipei Marriott Hotel',
-        url: window.location.href
+        url: SHARE_URL
       });
     } else {
       showToast('모바일에서 공유가 가능합니다');
