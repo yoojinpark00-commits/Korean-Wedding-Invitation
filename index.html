@@ -913,6 +913,12 @@
     border-color: var(--accent);
   }
 
+  .rsvp-textarea {
+    resize: vertical;
+    min-height: 64px;
+    line-height: 1.6;
+  }
+
   .rsvp-submit {
     display: block;
     width: 100%;
@@ -1315,8 +1321,8 @@
           <input type="text" class="rsvp-input" id="rsvp-guest" placeholder="예: 김지수, 김민아">
         </div>
         <div class="rsvp-field" id="field-children">
-          <label class="rsvp-label">자녀 동반</label>
-          <input type="text" class="rsvp-input" id="rsvp-children" placeholder="예: 2명 (5세, 7세)">
+          <label class="rsvp-label">자녀 동반 (성함 · 나이 · 참고사항)</label>
+          <textarea class="rsvp-input rsvp-textarea" id="rsvp-children" rows="2" placeholder="예: 김하늘 (5세, 유아식·아기의자 필요)&#10;김바다 (7세)"></textarea>
         </div>
         <div class="rsvp-field" id="field-dietary">
           <label class="rsvp-label">식사 관련 참고사항</label>
