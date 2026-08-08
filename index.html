@@ -1321,8 +1321,19 @@
           <input type="text" class="rsvp-input" id="rsvp-guest" placeholder="예: 김지수, 김민아">
         </div>
         <div class="rsvp-field" id="field-children">
-          <label class="rsvp-label">자녀 동반 (성함 · 나이 · 참고사항)</label>
-          <textarea class="rsvp-input rsvp-textarea" id="rsvp-children" rows="2" placeholder="예: 김하늘 (5세, 유아식·아기의자 필요)&#10;김바다 (7세)"></textarea>
+          <label class="rsvp-label">자녀 동반 여부</label>
+          <div class="rsvp-toggle-group">
+            <button type="button" class="rsvp-toggle" id="children-yes" onclick="setChildren('예')">네, 함께 갑니다</button>
+            <button type="button" class="rsvp-toggle" id="children-no" onclick="setChildren('아니오')">아니요</button>
+          </div>
+        </div>
+        <div class="rsvp-field" id="field-children-names" style="display:none">
+          <label class="rsvp-label">자녀 성함 · 나이</label>
+          <textarea class="rsvp-input rsvp-textarea" id="rsvp-children-names" rows="2" placeholder="예: 김하늘 (5세)&#10;김바다 (7세)"></textarea>
+        </div>
+        <div class="rsvp-field" id="field-children-notes" style="display:none">
+          <label class="rsvp-label">자녀 참고사항</label>
+          <input type="text" class="rsvp-input" id="rsvp-children-notes" placeholder="유아식, 아기의자 필요 등 (선택)">
         </div>
         <div class="rsvp-field" id="field-dietary">
           <label class="rsvp-label">식사 관련 참고사항</label>
@@ -1446,6 +1457,7 @@
   // RSVP - submit directly to Google Sheet via Apps Script web app
   const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx38IQdQhzBruO7T9_G7B7yPi5rQ4ivXQMkk600afgZ2gwXUS0927YcOlvyWmCB8VBe/exec';
   let rsvpAttendance = '';
+  let rsvpChildren = '';
 
   function setAttendance(value) {
     rsvpAttendance = value;
@@ -1455,14 +1467,35 @@
     document.getElementById('field-guest').style.display = attending ? '' : 'none';
     document.getElementById('field-children').style.display = attending ? '' : 'none';
     document.getElementById('field-dietary').style.display = attending ? '' : 'none';
+    const showChildDetails = attending && rsvpChildren === '예';
+    document.getElementById('field-children-names').style.display = showChildDetails ? '' : 'none';
+    document.getElementById('field-children-notes').style.display = showChildDetails ? '' : 'none';
+  }
+
+  function setChildren(value) {
+    rsvpChildren = value;
+    document.getElementById('children-yes').classList.toggle('active', value === '예');
+    document.getElementById('children-no').classList.toggle('active', value === '아니오');
+    const show = value === '예';
+    document.getElementById('field-children-names').style.display = show ? '' : 'none';
+    document.getElementById('field-children-notes').style.display = show ? '' : 'none';
   }
 
   function submitRSVP() {
     const name = document.getElementById('rsvp-name').value.trim();
     const guest = document.getElementById('rsvp-guest').value.trim();
-    const children = document.getElementById('rsvp-children').value.trim();
+    const childrenNames = document.getElementById('rsvp-children-names').value.trim();
+    const childrenNotes = document.getElementById('rsvp-children-notes').value.trim();
     const dietary = document.getElementById('rsvp-dietary').value.trim();
     const attending = rsvpAttendance === '참석';
+
+    let children = '';
+    if (attending && rsvpChildren === '예') {
+      children = childrenNames || '예';
+      if (childrenNotes) children += ' / 참고: ' + childrenNotes;
+    } else if (attending && rsvpChildren === '아니오') {
+      children = '없음';
+    }
 
     if (!rsvpAttendance) {
       showToast('참석 여부를 선택해 주세요');
@@ -1483,7 +1516,7 @@
     formData.append('name', name);
     formData.append('attendance', rsvpAttendance);
     formData.append('guest', attending ? guest : '');
-    formData.append('children', attending ? children : '');
+    formData.append('children', children);
     formData.append('dietary', attending ? dietary : '');
 
     const showSuccess = () => {
